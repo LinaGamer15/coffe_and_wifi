@@ -1,0 +1,76 @@
+body {
+font-family: 'Roboto', sans-serif !important;
+}
+
+p {
+font-weight: 400;
+}
+
+footer {
+background: #6A492B
+}
+
+#container-check {
+margin-top: 5%;
+}
+
+#footer-p {
+color: rgba(255,255,255,.5)
+}
+
+#title-h1 {
+background-image: url('background.jpg');
+background-size: 100%;
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+font-weight: 900;
+}
+
+#title-h4 {
+font-weight: 400;
+}
+
+#cafe-h5 {
+font-weight: 400;
+}
+
+.color-brown {
+color: #6A492B !important;
+}
+
+.title {
+padding-top: 100px;
+padding-bottom: 0px;
+}
+
+.a-title, .a-title:visited, .a-title:active, .a-title:hover{
+color: #6A492B !important;
+text-decoration: none !important
+}
+.a-footer, .a-footer:visited, .a-footer:active{
+color: rgba(255,255,255,.5) !important;
+text-decoration: none !important
+}
+.a-footer:hover{
+color: #f8f9fa !important;
+text-decoration: none !important
+}
+.cards {
+background: url('background.jpg');
+background-size: 100%;
+background-attachment: fixed
+}
+.button {
+background: #6A492B !important;
+border-color: #6A492B !important
+}
+
+@media (min-width: 2300px) {
+  .background-footer {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1030;
+  }
+}

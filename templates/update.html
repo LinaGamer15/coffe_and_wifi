@@ -1,0 +1,34 @@
+{% include 'header.html' %}
+{% import 'bootstrap/wtf.html' as wtf %}
+<div class="cards">
+    <div class="container pt-5 pb-5">
+        <div class="row bg-white mt-5 p-3 rounded">
+            <div class="col-lg-12 col-md-10 mx-auto">
+                <h3 class="pt-3 text-center">Update the Cafe</h3>
+                <form action="{{ url_for('update', cafe_name=cafe_name1) }}" method="post" class="form" role="form">
+  {{ form.hidden_tag() }}
+<div class="form-group  required">{{ form.name.label }} {{ form.name(class='form-control') }}
+  </div>
+<div class="form-group  required">{{ form.description.label }} {{ form.description(class='form-control') }}
+  </div>
+<div class="form-group  required">{{ form.address.label }} {{ form.address(class='form-control') }}
+  </div>
+<div class="form-group  required">{{ form.open.label }} {{ form.open(class='form-control') }}
+  </div>
+<div class="form-group  required">{{ form.close.label }} {{ form.close(class='form-control') }}
+  </div>
+<div class="form-group  required">{{ form.website.label }} {{ form.website(class='form-control') }}
+  </div>
+<div class="form-group  required">{{ form.image1.label }} {{ form.image1(class='form-control') }}
+  </div>
+<div class="form-group  required">{{ form.image2.label }} {{ form.image2(class='form-control') }}
+  </div>
+<div class="form-group  required">{{ form.image3.label }} {{ form.image3(class='form-control') }}
+  </div>
+    {{ form.submit(class='btn btn-dark btn-large button') }}
+</form>
+            </div>
+        </div>
+    </div>
+</div>
+{% include 'footer.html' %}

@@ -1,0 +1,42 @@
+{% include 'header.html' %}
+<div class="container title">
+    <div class="row">
+            <div class="col-lg-12 col-md-10 mx-auto text-center">
+                <h1 id="title-h1">Cafes With Free Wi-Fi And Power Plugs</h1>
+                <h4 class="mt-5 mb-5" id="title-h4">If you want a break from your daily scenery or gotta have those face-to-face meetings with your team or client, these cafes offering free Wi-Fi and power plugs are here to help. </h4>
+                <video width="100%" height="400" autoplay muted loop>
+                    <source src="static/video/video.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <p class='mt-4' ><a class='a-title' href="https://www.youtube.com/watch?v=t8k71QcArnk&ab_channel=Lockie%26Ash">Original</a></p>
+            </div>
+    </div>
+</div>
+<div class="cards">
+    {% for cafe in cafes %}
+<div class="container pt-5 pb-5">
+    <div class="row shadow-lg bg-white rounded pb-3">
+        <div class="col">
+            <div class="col-lg-12 col-md-10 mx-auto">
+                <h3 class="pt-3">{{ cafe.name }}</h3>
+                <p>{{ cafe.description }}</p>
+                <h6 class="color-brown">Coffee Rating: {{ cafe.coffee }}/{{ cafe.count_rate }}</h6>
+                <h6 class="color-brown">Wifi Strength Rating: {{ cafe.wifi }}/{{ cafe.count_rate }}</h6>
+                <h6 class="color-brown">Power Socket Availability: {{ cafe.power }}/{{ cafe.count_rate }}</h6>
+                <a href="{{ url_for('cafe', cafe_name=cafe.name) }}" type="button" class="btn btn-dark btn-large button mt-3">More</a>
+                <a href="{{ url_for('check_key', cafe_id=cafe.id, do='update') }}" type="button" class="btn btn-dark btn-large button mt-3">Update</a>
+                <a href="{{ url_for('check_key', cafe_id=cafe.id, do='delete') }}" type="button" class="btn btn-dark btn-large button mt-3">Delete</a>
+            </div>
+    </div>
+</div>
+</div>
+    {% endfor %}
+    <div class="container">
+        <div class="row text-center pb-5">
+            <div class="col-lg-12 col-md-10 mx-auto">
+                <a href="{{ url_for('add') }}" type="button" class="btn btn-light btn-large color-brown mt-5 shadow-sm">Add</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% include 'footer.html' %}
