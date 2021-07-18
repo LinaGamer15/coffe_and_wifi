@@ -5,10 +5,10 @@ from wtforms import SubmitField, StringField, HiddenField
 from flask_wtf import FlaskForm
 from wtforms.validators import DataRequired, URL
 from werkzeug.security import generate_password_hash, check_password_hash
-
+import os
 app = Flask(__name__)
-app.config['SECRET_KEY'] = 'kfdskFKSDZKFDSKF0Q32W9JSDFW94'
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///cafes.db'
+app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY')
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URI1', 'sqlite:///cafes.db')
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 Bootstrap(app)
 db = SQLAlchemy(app)
